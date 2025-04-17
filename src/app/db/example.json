@@ -1,0 +1,56 @@
+{
+	"id": "TSET",
+	"index": 999,
+	"createDate": "01-01-1970",
+	"name": "CULT KITS",
+	"website": "cultkits.com",
+	"defaultImage": "/images/cultkits-default.jpg",
+	"assortment": "Large assortment",
+	"rating": "4.8",
+	"statuses": {
+	  "isAssortmentHighlighted": false,
+	  "isEmailVerified": true
+	},
+	"additionalInfo": {
+	  "address": [
+		{
+		  "address": "Johnson road 56, 12345 Cologne, UK",
+		  "country": "UK",
+		  "city": "London",
+		  "province": "London",
+		  "postIndex": 12345,
+		  "street": "Johnson road",
+		  "buildingNumber": 56
+		}
+	  ],
+	  "contacts": [
+		{
+		  "type": "email",
+		  "value": "example@example.com",
+		  "isVerified": true
+		},
+		{
+		  "type": "website",
+		  "value": "cutkits.com",
+		  "isVerified": false
+		}
+	  ],
+	  "socialMedia": [
+		{
+		  "platform": "instagram",
+		  "url": "https://instagram.com/cultkits",
+		  "icon": "/icons/instagram.svg"
+		},
+		{
+		  "platform": "facebook",
+		  "url": "https://facebook.com/cultkits",
+		  "icon": "/icons/facebook.svg"
+		},
+		{
+		  "platform": "twitter",
+		  "url": "https://twitter.com/cultkits",
+		  "icon": "/icons/twitter.svg"
+		}
+	  ]
+	}
+  }
