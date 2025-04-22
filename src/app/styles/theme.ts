@@ -9,6 +9,21 @@ export const theme = {
 	fonts: {
 		main: 'Inter, Arial, sans-serif'
 	},
-  };
+};
+
+declare module 'styled-components' {
+	export interface DefaultTheme {
+		colors: {
+			main: string;
+			white: string;
+			accent: string;
+			secondary: string;
+			secondaryLight: string;
+		};
+		fonts: {
+		main: string;
+		};
+	}
+}
 
 export type ThemeType = typeof theme;

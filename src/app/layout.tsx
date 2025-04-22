@@ -5,7 +5,7 @@ import { Providers } from './Providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'My App',
+  title: 'Searching System',
 };
 
 export default function RootLayout({

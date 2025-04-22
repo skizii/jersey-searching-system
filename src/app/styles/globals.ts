@@ -5,6 +5,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     background: pink;
     font-family: sans-serif;
+    background: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.main};
   }
 
   * {
