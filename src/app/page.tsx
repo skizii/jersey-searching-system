@@ -1,9 +1,10 @@
-import Container from './components/container/Container';
+import Container from './components/container/';
+import Header from './components/header';
 
 export default function Home() {
   return (
     <Container>
-      <h1>Hello</h1>
+      <Header />
     </Container>
   );
 }
