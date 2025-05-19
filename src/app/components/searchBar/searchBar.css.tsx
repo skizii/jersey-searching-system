@@ -1,9 +1,9 @@
-// styles/SearchInput.css.ts
 import { style } from '@vanilla-extract/css';
 
 export const inputWrapper = style({
   display: 'flex',
   alignItems: 'center',
+  marginRight: '32px',
   border: '1px solid #f4b740',
   borderRadius: '9999px',
   padding: '11px 16px',
