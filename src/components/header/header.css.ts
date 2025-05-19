@@ -5,6 +5,7 @@ export const headerWrapper = style({
   display: 'flex',
   justifyContent: 'start',
   alignItems: 'center',
+  marginBottom: '78px',
 });
 
 export const logo = style({
