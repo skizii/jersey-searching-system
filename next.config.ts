@@ -1,4 +1,3 @@
-// next.config.ts
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 import type { NextConfig } from 'next';
 

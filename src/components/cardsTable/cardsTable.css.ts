@@ -1,12 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
 export const cardsTable = style({
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
-	flexWrap: 'wrap',
-	rowGap: '16px',
-	columnGap: '24px',
-	marginBottom: '72px',
 	width: '100%',
+	margin: '0 auto',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+	gridRowGap: '16px',
+	gridColumnGap: '24px',
 });

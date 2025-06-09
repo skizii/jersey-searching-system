@@ -1,21 +1,36 @@
+import Image from 'next/image';
+import { Store } from '../../types/store';
 import * as styles from './storeCard.css';
+import { SocialLinks } from '../socialLinks';
 
-export const StoreCard = () => {
+type Props = {
+  store: Store;
+};
+
+export const StoreCard: React.FC<Props> = ({ store }) => {
+	if (!store) {
+		return <div>Store data not loaded</div>;
+	}
   return (
-	<div className={styles.storeCard}>
-	  {/* <div className={styles.imageWrapper}>
-		<img
-		  src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHN0b3JlJTIwY2FyZHN8ZW58MHx8fHwxNjg5NTQ1NzA1&ixlib=rb-4.0.3&q=80&w=400"
-		  alt="Store"
-		  className={styles.image}
+    <div className={styles.storeCard}>
+		<div className={styles.labelsWrapper}>
+			<div className={styles.storeBadge}></div>
+		</div>
+		<Image
+		src={store.defaultImage}
+		alt={store.name}
+		width={248}
+		height={248}
+		style={{
+			objectFit: 'contain',
+			objectPosition: 'center',
+			minHeight: '248px'
+		}}
 		/>
-	  </div>
-	  <div className={styles.infoWrapper}>
-		<h2 className={styles.storeName}>Store Name</h2>
-		<p className={styles.storeDescription}>
-		  This is a description of the store. It provides an overview of what the store offers and its unique features.
-		</p>
-	  </div> */}
-	</div>
+		<a className={styles.storeLink} href={store.website}>{store.website}</a>
+		<h2 className={styles.storeHeader}>{store.name}</h2>
+		<p>{store.additionalInfo.address.city}, {store.additionalInfo.address.country}</p>
+		<SocialLinks socialMedia={store.additionalInfo.socialMedia} />
+    </div>
   );
-}
+};

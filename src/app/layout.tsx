@@ -1,3 +1,4 @@
+import 'normalize.css';
 import '../styles/theme.css';
 import { Inter } from 'next/font/google';
 import { defaultThemeClass } from '../styles/defaultTheme.css';
