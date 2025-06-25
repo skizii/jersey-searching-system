@@ -82,8 +82,3 @@ export const hoverCard = style({
   alignItems: 'center',
   borderRadius: '16px',
 });
-
-// export const hoverCardLink = style({
-//   fontSize: "13px",
-//   color: }
-// })

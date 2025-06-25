@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Store } from '../../types/store';
 import * as styles from './storeCard.css';
 import { SocialLinks } from '../socialLinks';
+import { FavouriteButton } from '../favouriteButton';
 
 type Props = {
   store: Store;
@@ -16,6 +17,8 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
   const phone = store.additionalInfo.contacts.tel.value;
   const email = store.additionalInfo.contacts.email.value;
 
+  const showFavouriteButton = isHovered || (typeof window !== 'undefined' && localStorage.getItem(`favourite-${store.id}`) === 'true');
+
   if (!store) {
     return <div>Store data not loaded</div>;
   }
@@ -25,15 +28,17 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
       className={styles.storeCardWrapper}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ position: 'relative' }}
     >
       {isHovered ? (
         <div className={styles.hoverCard}>
           <div className={styles.labelsWrapper}>
             <div className={styles.storeBadge}></div>
+            <FavouriteButton storeId={store.id} isVisible={showFavouriteButton} />
           </div>
           <h2 className={styles.storeHeader}>{store.name}</h2>
           <p>{store.assortment}</p>
-          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}>{address}</a>
+          <a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}>{address}</a>
           <a href={`tel:${phone}`}>{phone}</a>
           <a href={`mailto:${email}`}>{email}</a>
         </div>
@@ -41,6 +46,7 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
         <div className={styles.storeCard}>
           <div className={styles.labelsWrapper}>
             <div className={styles.storeBadge}></div>
+            <FavouriteButton storeId={store.id} isVisible={showFavouriteButton} />
           </div>
           <Image
             src={store.defaultImage}
@@ -67,15 +73,3 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
     </div>
   );
 };
-
-// console.log(str.slice(0, 2) + " counry");
-// console.log(str.slice(2, 5) + " operator");
-// console.log(str.slice(5, 8) + " 3");
-// console.log(str.slice(8, 10) + " 21");
-// console.log(str.slice(10, 12) + " 22");
-
-// function formatTel(tel: string) {
-// 	const countryCode = tel.slice(0, 2);
-// 	const operatorCode = tel.slice(3, 6);
-// 	let formattedTel = `+${countryCode} ${operatorCode}`
-// }
