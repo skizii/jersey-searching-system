@@ -1,14 +1,17 @@
 import { style } from '@vanilla-extract/css';
 import { themeVars } from '@/styles/theme.css';
 
+export const storeCardWrapper = style({
+  margin: '0 auto',
+  width: '395px',
+  height: '468px',
+});
+
 export const storeCard = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'start',
   alignItems: 'center',
-  margin: '0 auto',
-  width: '395px',
-  height: '468px',
   padding: '16px',
 });
 
@@ -67,3 +70,20 @@ export const storeHeader = style({
   lineHeight: '30px',
   textAlign: 'center',
 });
+
+export const hoverCard = style({
+  width: '100%',
+  height: '100%',
+  padding: '16px',
+  backgroundColor: themeVars.colors.secondaryLight,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'start',
+  alignItems: 'center',
+  borderRadius: '16px',
+});
+
+// export const hoverCardLink = style({
+//   fontSize: "13px",
+//   color: }
+// })

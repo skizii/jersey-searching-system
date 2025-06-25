@@ -22,10 +22,19 @@ export type Store = {
       buildingNumber: number;
     };
     contacts: {
-      type: string;
-      value: string;
-      isVerified: boolean;
-    }[];
+      tel: {
+        value: string;
+        isVerified: boolean;
+      };
+      email: {
+        value: string;
+        isVerified: boolean;
+      };
+      website: {
+        value: string;
+        isVerified: boolean;
+      };
+    };
     socialMedia: {
       platform: string;
       url: string;
