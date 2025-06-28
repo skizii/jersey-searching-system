@@ -60,3 +60,8 @@ globalStyle('button, a', {
 globalStyle('html', {
   scrollBehavior: 'smooth',
 });
+
+globalStyle('button, a, select, input', {
+  minHeight: 'unset',
+  minWidth: 'unset',
+});

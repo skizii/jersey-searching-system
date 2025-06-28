@@ -4,7 +4,6 @@ import { themeVars } from '@/styles/theme.css';
 export const storeListHeaderWrapper = style({
 	display: 'flex',
 	width: '151px',
-	height: '46px',
 	marginBottom: '24px',
 	flexDirection: 'column',
 	

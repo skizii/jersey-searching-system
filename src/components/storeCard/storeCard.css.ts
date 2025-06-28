@@ -192,19 +192,6 @@ export const storeAssortment = style({
   fontWeight: '400',
   lineHeight: '15px',
   textAlign: 'center',
-  
-  '@media': {
-    'screen and (max-width: 768px)': {
-      marginBottom: '24px',
-      fontSize: '12px',
-      lineHeight: '14px',
-    },
-    'screen and (max-width: 480px)': {
-      marginBottom: '20px',
-      fontSize: '11px',
-      lineHeight: '13px',
-    },
-  },
 });
 
 export const storeContacts = style({
@@ -219,20 +206,6 @@ export const storeContacts = style({
   fontWeight: '400',
   lineHeight: '15px',
   textAlign: 'center',
-  
-  '@media': {
-    'screen and (max-width: 768px)': {
-      marginBottom: '24px',
-      fontSize: '12px',
-      lineHeight: '14px',
-    },
-    'screen and (max-width: 480px)': {
-      marginBottom: '20px',
-      fontSize: '11px',
-      lineHeight: '13px',
-      gap: '6px',
-    },
-  },
 });
 
 export const storeContact = style({
@@ -250,18 +223,13 @@ export const storeContact = style({
 export const contactBlock = style({
   display: 'flex',
   alignItems: 'center',
+
   gap: '8px',
   cursor: 'pointer',
   transition: 'all 0.2s ease',
   selectors: {
     '&:hover': {
       color: themeVars.colors.main,
-    },
-  },
-  
-  '@media': {
-    'screen and (max-width: 480px)': {
-      gap: '6px',
     },
   },
 });
@@ -271,13 +239,6 @@ export const contactIcon = style({
   selectors: {
     [`${contactBlock}:hover &`]: {
       filter: 'brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)',
-    },
-  },
-  
-  '@media': {
-    'screen and (max-width: 480px)': {
-      width: '16px',
-      height: '16px',
     },
   },
 });

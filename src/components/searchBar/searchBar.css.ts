@@ -10,7 +10,7 @@ export const inputWrapper = style({
   padding: '11px 16px',
   width: '100%',
   maxWidth: '500px',
-  height: '24px',
+  height: '46px', 
   
   '@media': {
     'screen and (max-width: 768px)': {
