@@ -96,11 +96,13 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
           <a className={styles.storeLink} href={store.website}>
             {store.website}
           </a>
-          <h2 className={styles.storeName}>{store.name}</h2>
-          <p>
-            {addresses[0].city},{' '}
-            {addresses[0].country}
-          </p>
+          <div className={styles.storeInfoWrapper}>
+            <h2 className={styles.storeName}>{store.name}</h2>
+            <p>
+              {addresses[0].city},{' '}
+              {addresses[0].country}
+            </p>
+          </div>
           <SocialLinks socialMedia={store.additionalInfo.socialMedia} />
         </div>
       )}

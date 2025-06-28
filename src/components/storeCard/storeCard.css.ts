@@ -15,6 +15,15 @@ export const storeCard = style({
   padding: '16px',
 });
 
+export const storeInfoWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  marginBottom: '16px',
+});
+
 export const storeInfo = style({
   display: 'flex',
   flexDirection: 'column',
@@ -79,7 +88,7 @@ export const storeAdress = style({
 });
 
 export const storeName = style({
-  margin: '16px 0 0 0',
+  margin: '16px 0 16px 0',
   color: themeVars.colors.main,
   fontSize: '25px',
   fontWeight: '400',
