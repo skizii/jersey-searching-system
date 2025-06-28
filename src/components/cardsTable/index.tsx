@@ -1,10 +1,12 @@
 import * as styles from './cardsTable.css';
 import { StoreCard } from '../storeCard';
-import { getStores } from '@/services/storeService';
+import { Store } from '@/types/store';
 
-export const CardsTable = () => {
-	const stores = getStores();
+interface CardsTableProps {
+	stores: Store[];
+}
 
+export const CardsTable: React.FC<CardsTableProps> = ({ stores }) => {
 	return (
 		<div className={styles.cardsTable}>
 		{stores.map((store) => (
