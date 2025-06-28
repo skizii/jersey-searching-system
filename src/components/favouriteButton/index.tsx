@@ -13,8 +13,10 @@ interface FavouriteButtonProps {
 
 export const FavouriteButton: React.FC<FavouriteButtonProps> = ({ storeId, isVisible, initialFavourite = false, onChange }) => {
   const [isFavourite, setIsFavourite] = useState(initialFavourite);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const fav = localStorage.getItem(`favourite-${storeId}`);
     setIsFavourite(fav === 'true');
   }, [storeId]);
@@ -28,6 +30,19 @@ export const FavouriteButton: React.FC<FavouriteButtonProps> = ({ storeId, isVis
   };
 
   if (!isVisible) return null;
+
+  // Don't render the button until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return (
+      <button
+        aria-label="Add to favourites"
+        className={favouriteButton}
+        style={{ visibility: 'hidden' }}
+      >
+        <Image src="/icons/favourite-outline.svg" alt="Favourite" width={24} height={24} className={favouriteButton} />
+      </button>
+    );
+  }
 
   return (
     <button

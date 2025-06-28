@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Store } from '../../types/store';
 import * as styles from './storeCard.css';
@@ -15,6 +15,7 @@ type Props = {
 
 export const StoreCard: React.FC<Props> = ({ store }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const phone = store.additionalInfo.contacts.tel.value;
   const email = store.additionalInfo.contacts.email.value;
   const website = store.website;
@@ -24,7 +25,11 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
     ? store.additionalInfo.address 
     : [store.additionalInfo.address];
 
-  const showFavouriteButton = isHovered || (typeof window !== 'undefined' && localStorage.getItem(`favourite-${store.id}`) === 'true');
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const showFavouriteButton = isHovered || (isMounted && localStorage.getItem(`favourite-${store.id}`) === 'true');
 
   // Check if store was created within the last 2 weeks
   const isNewStore = () => {

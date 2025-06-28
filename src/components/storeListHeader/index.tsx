@@ -3,6 +3,8 @@ import { SortSelect } from '../sortSelect';
 
 type Props = {
   count: number;
+  sortBy: string;
+  onSortChange: (sortBy: string) => void;
 };
 
 const getCountText = (count: number) => {
@@ -12,9 +14,9 @@ const getCountText = (count: number) => {
   return 'stores';
 };
 
-export const StoreListHeader: React.FC<Props> = ({ count }) => (
+export const StoreListHeader: React.FC<Props> = ({ count, sortBy, onSortChange }) => (
   <div className={styles.storeListHeaderWrapper}>
 	<span className={styles.totalCount}>{count} {getCountText(count)}</span>
-  <SortSelect />
+  <SortSelect sortBy={sortBy} onSortChange={onSortChange} />
   </div>
 );

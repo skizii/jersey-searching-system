@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Container from '../components/container/';
 import Header from '../components/header';
 import { StoreListHeader } from '../components/storeListHeader';
@@ -15,8 +15,14 @@ export default function Home() {
     country: '',
     favourited: false,
   });
+  const [sortBy, setSortBy] = useState('newest');
+  const [isMounted, setIsMounted] = useState(false);
   
   const allStores = getStores();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Get unique countries from stores
   const countries = useMemo(() => {
@@ -43,12 +49,32 @@ export default function Home() {
 
   // Check if store is favourited
   const isFavourited = (store: Store) => {
-    if (typeof window === 'undefined') return false;
+    if (!isMounted) return false;
     return localStorage.getItem(`favourite-${store.id}`) === 'true';
   };
 
-  // Filter stores based on search query and filters
-  const filteredStores = useMemo(() => {
+  // Sort stores based on sortBy value
+  const sortStores = (stores: Store[]) => {
+    const sortedStores = [...stores];
+    
+    switch (sortBy) {
+      case 'newest':
+        return sortedStores.sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
+      case 'oldest':
+        return sortedStores.sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());
+      case 'atoz':
+        return sortedStores.sort((a, b) => a.name.localeCompare(b.name));
+      case 'ztoa':
+        return sortedStores.sort((a, b) => b.name.localeCompare(a.name));
+      case 'rating':
+        return sortedStores.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+      default:
+        return sortedStores;
+    }
+  };
+
+  // Filter and sort stores based on search query, filters, and sort
+  const filteredAndSortedStores = useMemo(() => {
     let filtered = allStores;
 
     // Apply search filter
@@ -92,8 +118,9 @@ export default function Home() {
       filtered = filtered.filter(isFavourited);
     }
 
-    return filtered;
-  }, [allStores, searchQuery, filters]);
+    // Apply sorting
+    return sortStores(filtered);
+  }, [allStores, searchQuery, filters, sortBy, isMounted]);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -106,6 +133,10 @@ export default function Home() {
     }));
   };
 
+  const handleSortChange = (newSortBy: string) => {
+    setSortBy(newSortBy);
+  };
+
   return (
     <Container>
       <Header 
@@ -114,8 +145,12 @@ export default function Home() {
         onFilterChange={handleFilterChange}
         countries={countries}
       />
-      <StoreListHeader count={filteredStores.length} />
-      <CardsTable stores={filteredStores} />
+      <StoreListHeader 
+        count={filteredAndSortedStores.length} 
+        sortBy={sortBy}
+        onSortChange={handleSortChange}
+      />
+      <CardsTable stores={filteredAndSortedStores} />
     </Container>
   );
 }
