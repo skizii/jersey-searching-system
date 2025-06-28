@@ -42,6 +42,7 @@ export const SocialLinks: React.FC<Props> = ({ socialMedia }) => (
             alt={platform}
             width={24}
             height={24}
+            className={styles.icon}
           />
         </a>
       );

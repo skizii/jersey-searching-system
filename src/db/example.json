@@ -13,7 +13,8 @@
 		"isEmailVerified": true
 		},
 		"additionalInfo": {
-		"address": {
+		"address": [
+			{
 			"address": "Johnson road 56, 12345 Cologne, UK",
 			"country": "UK",
 			"city": "London",
@@ -21,7 +22,17 @@
 			"postIndex": 12345,
 			"street": "Johnson road",
 			"buildingNumber": 56
-		},
+			},
+			{
+			"address": "Johnson road 56, 12345 Cologne, UK",
+			"country": "UK",
+			"city": "London",
+			"province": "London",
+			"postIndex": 12345,
+			"street": "Johnson road",
+			"buildingNumber": 56
+			}
+		],
 		"contacts": {
 			"email": {
 				"value": "example@example.com",

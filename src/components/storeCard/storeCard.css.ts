@@ -15,6 +15,14 @@ export const storeCard = style({
   padding: '16px',
 });
 
+export const storeInfo = style({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'start',
+  alignItems: 'start',
+  width: '100%',
+});
+
 export const storeHeaderWrapper = style({
   display: 'flex',
   justifyContent: 'space-between',
@@ -70,13 +78,76 @@ export const storeAdress = style({
   textAlign: 'center',
 });
 
-export const storeHeader = style({
+export const storeName = style({
   margin: '16px 0 0 0',
   color: themeVars.colors.main,
   fontSize: '25px',
   fontWeight: '400',
   lineHeight: '30px',
   textAlign: 'center',
+});
+
+export const storeAssortment = style({
+  marginBottom: '32px',
+  display: 'flex',
+  gap: '8px',
+  justifyContent: 'start',
+  alignItems: 'center',
+  width: '100%',
+  color: themeVars.colors.secondaryWithBg,
+  fontSize: '13px',
+  fontWeight: '400',
+  lineHeight: '15px',
+  textAlign: 'center',
+});
+
+export const storeContacts = style({
+  marginBottom: '32px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'start',
+  alignItems: 'start',
+  width: '100%',
+  gap: '8px',
+  fontSize: '13px',
+  fontWeight: '400',
+  lineHeight: '15px',
+  textAlign: 'center',
+});
+
+export const storeContact = style({
+  textDecoration: 'none',
+  color: themeVars.colors.secondaryWithBg,
+  cursor: 'pointer',
+  transition: 'color 0.2s ease',
+  selectors: {
+    '&:hover': {
+      color: themeVars.colors.main,
+    },
+  },
+});
+
+export const contactBlock = style({
+  display: 'flex',
+  alignItems: 'center',
+
+  gap: '8px',
+  cursor: 'pointer',
+  transition: 'all 0.2s ease',
+  selectors: {
+    '&:hover': {
+      color: themeVars.colors.main,
+    },
+  },
+});
+
+export const contactIcon = style({
+  transition: 'filter 0.2s ease',
+  selectors: {
+    [`${contactBlock}:hover &`]: {
+      filter: 'brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)',
+    },
+  },
 });
 
 export const hoverCard = style({
@@ -87,6 +158,6 @@ export const hoverCard = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'start',
-  alignItems: 'center',
+  alignItems: 'start',
   borderRadius: '16px',
 });

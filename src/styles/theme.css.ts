@@ -7,6 +7,7 @@ export const themeVars = createThemeContract({
     accent: null,
     secondary: null,
     secondaryLight: null,
+    secondaryWithBg: null,
   },
   fonts: {
     main: null,

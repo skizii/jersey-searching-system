@@ -20,7 +20,15 @@ export type Store = {
       postIndex: number;
       street: string;
       buildingNumber: number;
-    };
+    } | {
+      address: string;
+      country: string;
+      city: string;
+      province: string;
+      postIndex: number;
+      street: string;
+      buildingNumber: number;
+    }[];
     contacts: {
       tel: {
         value: string;
