@@ -21,3 +21,42 @@ createGlobalTheme(`.${defaultThemeClass}`, themeVars);
 globalStyle('p, h1, h2, h3, h4, h5, h6', {
   margin: 0,
 });
+
+// Add responsive improvements
+globalStyle('*', {
+  boxSizing: 'border-box',
+});
+
+globalStyle('html, body', {
+  overflowX: 'hidden',
+});
+
+// Touch-friendly improvements
+globalStyle('button, a, select, input', {
+  minHeight: '44px',
+  minWidth: '44px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      minHeight: '40px',
+      minWidth: '40px',
+    },
+    'screen and (max-width: 480px)': {
+      minHeight: '36px',
+      minWidth: '36px',
+    },
+  },
+});
+
+// Prevent text selection on interactive elements
+globalStyle('button, a', {
+  userSelect: 'none',
+  WebkitUserSelect: 'none',
+  MozUserSelect: 'none',
+  msUserSelect: 'none',
+});
+
+// Smooth scrolling
+globalStyle('html', {
+  scrollBehavior: 'smooth',
+});

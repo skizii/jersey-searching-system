@@ -6,6 +6,21 @@ export const storeCardWrapper = style({
   width: '395px',
   height: '468px',
   marginBottom: '24px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      maxWidth: '350px',
+      height: '420px',
+      marginBottom: '20px',
+    },
+    'screen and (max-width: 480px)': {
+      width: '100%',
+      maxWidth: '100%',
+      height: '380px',
+      marginBottom: '16px',
+    },
+  },
 });
 
 export const storeCard = style({
@@ -14,6 +29,15 @@ export const storeCard = style({
   justifyContent: 'start',
   alignItems: 'center',
   padding: '16px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      padding: '12px',
+    },
+    'screen and (max-width: 480px)': {
+      padding: '10px',
+    },
+  },
 });
 
 export const storeInfoWrapper = style({
@@ -23,6 +47,15 @@ export const storeInfoWrapper = style({
   alignItems: 'center',
   width: '100%',
   marginBottom: '16px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginBottom: '12px',
+    },
+    'screen and (max-width: 480px)': {
+      marginBottom: '10px',
+    },
+  },
 });
 
 export const storeInfo = style({
@@ -47,6 +80,13 @@ export const labelsWrapper = style({
   alignItems: 'center',
   height: '24px',
   width: '52px',
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      height: '20px',
+      width: '48px',
+    },
+  },
 });
 
 export const storeBadge = style({
@@ -69,6 +109,16 @@ export const storeBadge = style({
       content: '"New"',
     },
   },
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      width: '40px',
+      height: '20px',
+      fontSize: '12px',
+      lineHeight: '14px',
+      padding: '3px 6px',
+    },
+  },
 });
 
 export const storeLink = style({
@@ -79,6 +129,19 @@ export const storeLink = style({
   lineHeight: '15px',
   textAlign: 'center',
   textDecoration: 'none',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginTop: '12px',
+      fontSize: '12px',
+      lineHeight: '14px',
+    },
+    'screen and (max-width: 480px)': {
+      marginTop: '10px',
+      fontSize: '11px',
+      lineHeight: '13px',
+    },
+  },
 })
 
 export const storeAdress = style({
@@ -86,6 +149,13 @@ export const storeAdress = style({
   fontWeight: '400',
   lineHeight: '18px',
   textAlign: 'center',
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      fontSize: '14px',
+      lineHeight: '16px',
+    },
+  },
 });
 
 export const storeName = style({
@@ -95,6 +165,19 @@ export const storeName = style({
   fontWeight: '400',
   lineHeight: '30px',
   textAlign: 'center',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '22px',
+      lineHeight: '26px',
+      margin: '12px 0 12px 0',
+    },
+    'screen and (max-width: 480px)': {
+      fontSize: '20px',
+      lineHeight: '24px',
+      margin: '10px 0 10px 0',
+    },
+  },
 });
 
 export const storeAssortment = style({
@@ -109,6 +192,19 @@ export const storeAssortment = style({
   fontWeight: '400',
   lineHeight: '15px',
   textAlign: 'center',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginBottom: '24px',
+      fontSize: '12px',
+      lineHeight: '14px',
+    },
+    'screen and (max-width: 480px)': {
+      marginBottom: '20px',
+      fontSize: '11px',
+      lineHeight: '13px',
+    },
+  },
 });
 
 export const storeContacts = style({
@@ -123,6 +219,20 @@ export const storeContacts = style({
   fontWeight: '400',
   lineHeight: '15px',
   textAlign: 'center',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginBottom: '24px',
+      fontSize: '12px',
+      lineHeight: '14px',
+    },
+    'screen and (max-width: 480px)': {
+      marginBottom: '20px',
+      fontSize: '11px',
+      lineHeight: '13px',
+      gap: '6px',
+    },
+  },
 });
 
 export const storeContact = style({
@@ -140,13 +250,18 @@ export const storeContact = style({
 export const contactBlock = style({
   display: 'flex',
   alignItems: 'center',
-
   gap: '8px',
   cursor: 'pointer',
   transition: 'all 0.2s ease',
   selectors: {
     '&:hover': {
       color: themeVars.colors.main,
+    },
+  },
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      gap: '6px',
     },
   },
 });
@@ -156,6 +271,13 @@ export const contactIcon = style({
   selectors: {
     [`${contactBlock}:hover &`]: {
       filter: 'brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)',
+    },
+  },
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      width: '16px',
+      height: '16px',
     },
   },
 });
@@ -170,4 +292,33 @@ export const hoverCard = style({
   justifyContent: 'start',
   alignItems: 'start',
   borderRadius: '16px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      padding: '12px',
+      borderRadius: '12px',
+    },
+    'screen and (max-width: 480px)': {
+      padding: '10px',
+      borderRadius: '8px',
+    },
+  },
+});
+
+export const imageContainer = style({
+  width: '65%',
+  height: '248px',
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: '200px',
+    },
+    'screen and (max-width: 480px)': {
+      height: '180px',
+    },
+  },
 });

@@ -136,17 +136,18 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
             {isNewStore() && <div className={styles.storeBadge}></div>}
             <FavouriteButton storeId={store.id} isVisible={showFavouriteButton} />
           </div>
-          <Image
-            src={store.defaultImage}
-            alt={store.name}
-            width={248}
-            height={248}
-            style={{
-              objectFit: 'contain',
-              objectPosition: 'center',
-              minHeight: '248px',
-            }}
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src={store.defaultImage}
+              alt={store.name}
+              fill
+              style={{
+                objectFit: 'contain',
+                objectPosition: 'center',
+              }}
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 248px"
+            />
+          </div>
           <a className={styles.storeLink} href={store.website}>
             {store.website}
           </a>

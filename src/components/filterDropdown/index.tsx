@@ -34,7 +34,12 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
               type="checkbox"
               checked={filters.new}
               onChange={(e) => onFilterChange('new', e.target.checked)}
-              className={styles.filterCheckbox}
+              className={styles.visuallyHiddenCheckbox}
+            />
+            <span
+              className={styles.customCheckbox}
+              data-checked={filters.new ? 'true' : 'false'}
+              aria-hidden="true"
             />
             <span className={styles.filterText}>New stores only</span>
           </label>
@@ -66,7 +71,12 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
               type="checkbox"
               checked={filters.favourited}
               onChange={(e) => onFilterChange('favourited', e.target.checked)}
-              className={styles.filterCheckbox}
+              className={styles.visuallyHiddenCheckbox}
+            />
+            <span
+              className={styles.customCheckbox}
+              data-checked={filters.favourited ? 'true' : 'false'}
+              aria-hidden="true"
             />
             <span className={styles.filterText}>Favourited only</span>
           </label>

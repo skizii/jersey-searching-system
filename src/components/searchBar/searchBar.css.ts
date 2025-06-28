@@ -11,10 +11,29 @@ export const inputWrapper = style({
   width: '100%',
   maxWidth: '500px',
   height: '24px',
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginRight: '0',
+      maxWidth: '100%',
+      height: '48px',
+      padding: '12px 16px',
+    },
+    'screen and (max-width: 480px)': {
+      height: '44px',
+      padding: '10px 14px',
+    },
+  },
 });
 
 export const icon = style({
   marginRight: '8px',
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      marginRight: '6px',
+    },
+  },
 });
 
 export const input = style({
@@ -23,10 +42,20 @@ export const input = style({
   flex: 1,
   fontSize: '1rem',
   color: themeVars.colors.main,
+  background: 'transparent',
 
   selectors: {
     '&::placeholder': {
       color: themeVars.colors.secondary,
+    },
+  },
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '16px', // Prevents zoom on iOS
+    },
+    'screen and (max-width: 480px)': {
+      fontSize: '14px',
     },
   },
 });

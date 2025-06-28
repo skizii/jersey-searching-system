@@ -9,4 +9,10 @@ export const favouriteButton = style({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  });
+    
+    '@media': {
+        'screen and (max-width: 480px)': {
+            transform: 'scale(0.9)',
+        },
+    },
+});

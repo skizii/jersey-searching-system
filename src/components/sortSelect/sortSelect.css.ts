@@ -1,5 +1,6 @@
 // styles/sortSelect.css.ts
 import { style } from '@vanilla-extract/css';
+import { themeVars } from '@/styles/theme.css';
 
 export const wrapper = style({
   display: 'flex',
@@ -8,6 +9,13 @@ export const wrapper = style({
   fontSize: '14px',
   color: '#333333',
   padding: '8px 0',
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      gap: '8px',
+      fontSize: '13px',
+    },
+  },
 });
 
 export const label = style({
@@ -16,6 +24,12 @@ export const label = style({
   fontWeight: '500',
   color: '#333333',
   userSelect: 'none',
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      fontSize: '13px',
+    },
+  },
 });
 
 export const selectWrapper = style({
@@ -24,15 +38,14 @@ export const selectWrapper = style({
 
 export const select = style({
   appearance: 'none',
-  background: '#ffffff',
-  border: '2px solid #e0e0e0',
-  borderRadius: '6px',
+  background: 'transparent',
+  border: 'none',
   fontSize: '14px',
-  color: '#333333',
+  color: themeVars.colors.text,
   fontFamily: 'inherit',
   padding: '8px 32px 8px 12px',
   cursor: 'pointer',
-  minWidth: '140px',
+  minWidth: '80px',
   transition: 'all 0.2s ease',
 
   selectors: {
@@ -43,6 +56,18 @@ export const select = style({
     },
     '&:hover': {
       borderColor: '#007bff',
+    },
+  },
+  
+  '@media': {
+    'screen and (max-width: 768px)': {
+      minWidth: '120px',
+      padding: '6px 28px 6px 10px',
+    },
+    'screen and (max-width: 480px)': {
+      minWidth: '100px',
+      fontSize: '13px',
+      padding: '5px 24px 5px 8px',
     },
   },
 });
@@ -63,6 +88,14 @@ export const icon = style({
   selectors: {
     [`${select}:focus + &`]: {
       transform: 'translateY(-50%) rotate(180deg)',
+    },
+  },
+  
+  '@media': {
+    'screen and (max-width: 480px)': {
+      right: '6px',
+      width: '14px',
+      height: '14px',
     },
   },
 });
