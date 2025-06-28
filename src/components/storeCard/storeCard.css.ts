@@ -15,12 +15,20 @@ export const storeCard = style({
   padding: '16px',
 });
 
-export const labelsWrapper = style({
+export const storeHeaderWrapper = style({
   display: 'flex',
-  justifyContent: 'start',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  height: '32x',
   width: '100%',
+});
+
+export const labelsWrapper = style({
+  marginRight: 'auto',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  height: '24px',
+  width: '52px',
 });
 
 export const storeBadge = style({

@@ -6,8 +6,6 @@ export const favouriteButton = style({
     cursor: 'pointer',
     zIndex: 2,
     padding: 0,
-    width: 32,
-    height: 32,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -6,6 +6,7 @@ import { Store } from '../../types/store';
 import * as styles from './storeCard.css';
 import { SocialLinks } from '../socialLinks';
 import { FavouriteButton } from '../favouriteButton';
+import { StoreRating } from '../storeRating';
 
 type Props = {
   store: Store;
@@ -32,9 +33,12 @@ export const StoreCard: React.FC<Props> = ({ store }) => {
     >
       {isHovered ? (
         <div className={styles.hoverCard}>
-          <div className={styles.labelsWrapper}>
-            <div className={styles.storeBadge}></div>
-            <FavouriteButton storeId={store.id} isVisible={showFavouriteButton} />
+          <div className={styles.storeHeaderWrapper}>
+            <div className={styles.labelsWrapper}>
+              <div className={styles.storeBadge}></div>
+              <FavouriteButton storeId={store.id} isVisible={showFavouriteButton} />
+            </div>
+            <StoreRating rating={+store.rating} />
           </div>
           <h2 className={styles.storeHeader}>{store.name}</h2>
           <p>{store.assortment}</p>

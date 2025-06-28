@@ -7,7 +7,7 @@
 		"website": "cultkits.com",
 		"defaultImage": "/img/cult-kits.jpeg",
 		"assortment": "Large assortment",
-		"rating": "4.8",
+		"rating": 4.8,
 		"statuses": {
 		"isAssortmentHighlighted": false,
 		"isEmailVerified": true
@@ -65,7 +65,7 @@
 		"website": "cultkits.com",
 		"defaultImage": "/img/cult-kits.jpeg",
 		"assortment": "Large assortment",
-		"rating": "4.8",
+		"rating": 4.8,
 		"statuses": {
 		"isAssortmentHighlighted": false,
 		"isEmailVerified": true
