@@ -6,5 +6,4 @@ export const cardsTable = style({
 	display: 'grid',
 	gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
 	gridRowGap: '16px',
-	gridColumnGap: '24px',
 });

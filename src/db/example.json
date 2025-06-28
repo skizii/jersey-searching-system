@@ -7,7 +7,7 @@
 		"website": "cultkits.com",
 		"defaultImage": "/img/cult-kits.jpeg",
 		"assortment": "Large assortment",
-		"rating": 4.8,
+		"rating": 4.3,
 		"statuses": {
 		"isAssortmentHighlighted": false,
 		"isEmailVerified": true
@@ -43,7 +43,7 @@
 				"isVerified": false
 			},
 			"tel": {
-				"value": "+771234567890",
+				"value": "+71234567890",
 				"isVerified": true
 			}
 		},
@@ -68,60 +68,214 @@
 		]
 		}
 	},
-		{
+	{
 		"id": "TSET2",
-		"index": 1,
-		"createDate": "01-18-1970",
-		"name": "CULT KITS",
-		"website": "cultkits.com",
-		"defaultImage": "/img/cult-kits.jpeg",
-		"assortment": "Large assortment",
-		"rating": 4.8,
+		"index": 2,
+		"createDate": "06-26-2025",
+		"name": "RETRO FOOTBALL SHIRTS",
+		"website": "retrofootball.com",
+		"defaultImage": "/img/retro-football-shirt-store.jpeg",
+		"assortment": "Medium assortment",
+		"rating": 4.6,
 		"statuses": {
-		"isAssortmentHighlighted": false,
+		"isAssortmentHighlighted": true,
 		"isEmailVerified": true
 		},
 		"additionalInfo": {
 		"address": {
-			"address": "Johnson road 56, 12345 Cologne, UK",
+			"address": "Baker Street 221B, 10001 Manchester, UK",
 			"country": "UK",
-			"city": "London",
-			"province": "London",
-			"postIndex": 12345,
-			"street": "Johnson road",
-			"buildingNumber": 56
+			"city": "Manchester",
+			"province": "Greater Manchester",
+			"postIndex": 10001,
+			"street": "Baker Street",
+			"buildingNumber": 221
 		},
 		"contacts": {
 			"email": {
-				"value": "example@example.com",
+				"value": "info@retrofootball.com",
 				"isVerified": true
 			},
 			"website":{
-				"value": "cutkits.com",
-				"isVerified": false
+				"value": "retrofootball.com",
+				"isVerified": true
 			},
 			"tel": {
-				"value": "+799999999",
+				"value": "+44123456789",
 				"isVerified": true
 			}
 		},
 		"socialMedia": [
 			{
 			"platform": "instagram",
-			"url": "https://instagram.com/cultkits",
-			"icon": "/icons/instagram.svg"
+			"url": "https://instagram.com/retrofootball",
+			"icon": "/icons/social/ig.svg"
 			},
 			{
 			"platform": "facebook",
-			"url": "https://facebook.com/cultkits" 
+			"url": "https://facebook.com/retrofootball" 
 			},
 			{
 			"platform": "twitter",
-			"url": "https://twitter.com/cultkits"
+			"url": "https://twitter.com/retrofootball"
+			}
+		]
+		}
+	},
+	{
+		"id": "TSET3",
+		"index": 3,
+		"createDate": "07-22-1992",
+		"name": "THE THIRD KIT",
+		"website": "thirdkit.com",
+		"defaultImage": "/img/the-third-kit.jpeg",
+		"assortment": "Small assortment",
+		"rating": 4.9,
+		"statuses": {
+		"isAssortmentHighlighted": false,
+		"isEmailVerified": false
+		},
+		"additionalInfo": {
+		"address": {
+			"address": "Oxford Street 456, 20002 Liverpool, UK",
+			"country": "UK",
+			"city": "Liverpool",
+			"province": "Merseyside",
+			"postIndex": 20002,
+			"street": "Oxford Street",
+			"buildingNumber": 456
+		},
+		"contacts": {
+			"email": {
+				"value": "contact@thirdkit.com",
+				"isVerified": false
+			},
+			"website":{
+				"value": "thirdkit.com",
+				"isVerified": true
+			},
+			"tel": {
+				"value": "+4641234567890",
+				"isVerified": true
+			}
+		},
+		"socialMedia": [
+			{
+			"platform": "instagram",
+			"url": "https://instagram.com/thirdkit",
+			"icon": "/icons/social/ig.svg"
 			},
 			{
 			"platform": "youtube",
-			"url": "https://youtube.com/cultkits"
+			"url": "https://youtube.com/thirdkit"
+			}
+		]
+		}
+	},
+	{
+		"id": "TSET4",
+		"index": 4,
+		"createDate": "11-08-2000",
+		"name": "TSPN CALCIO",
+		"website": "tspncalcio.it",
+		"defaultImage": "/img/tspncalcio.jpeg",
+		"assortment": "Large assortment",
+		"rating": 4.7,
+		"statuses": {
+		"isAssortmentHighlighted": true,
+		"isEmailVerified": true
+		},
+		"additionalInfo": {
+		"address": {
+			"address": "Via Roma 789, 00100 Milano, Italy",
+			"country": "Italy",
+			"city": "Milano",
+			"province": "Lombardia",
+			"postIndex": 100,
+			"street": "Via Roma",
+			"buildingNumber": 789
+		},
+		"contacts": {
+			"email": {
+				"value": "info@tspncalcio.it",
+				"isVerified": true
+			},
+			"website":{
+				"value": "tspncalcio.it",
+				"isVerified": true
+			},
+			"tel": {
+				"value": "+390123456789",
+				"isVerified": true
+			}
+		},
+		"socialMedia": [
+			{
+			"platform": "instagram",
+			"url": "https://instagram.com/tspncalcio",
+			"icon": "/icons/social/ig.svg"
+			},
+			{
+			"platform": "facebook",
+			"url": "https://facebook.com/tspncalcio" 
+			},
+			{
+			"platform": "twitter",
+			"url": "https://twitter.com/tspncalcio"
+			},
+			{
+			"platform": "youtube",
+			"url": "https://youtube.com/tspncalcio"
+			}
+		]
+		}
+	},
+	{
+		"id": "TSET5",
+		"index": 5,
+		"createDate": "05-12-1995",
+		"name": "VINTAGE FOOTBALL GEAR",
+		"website": "vintagefootball.com",
+		"defaultImage": "/img/cult-kits.jpeg",
+		"assortment": "Medium assortment",
+		"rating": 4.5,
+		"statuses": {
+		"isAssortmentHighlighted": false,
+		"isEmailVerified": true
+		},
+		"additionalInfo": {
+		"address": {
+			"address": "High Street 321, 30003 Birmingham, UK",
+			"country": "UK",
+			"city": "Birmingham",
+			"province": "West Midlands",
+			"postIndex": 30003,
+			"street": "High Street",
+			"buildingNumber": 321
+		},
+		"contacts": {
+			"email": {
+				"value": "sales@vintagefootball.com",
+				"isVerified": true
+			},
+			"website":{
+				"value": "vintagefootball.com",
+				"isVerified": true
+			},
+			"tel": {
+				"value": "+44123456789",
+				"isVerified": false
+			}
+		},
+		"socialMedia": [
+			{
+			"platform": "instagram",
+			"url": "https://instagram.com/vintagefootball",
+			"icon": "/icons/social/ig.svg"
+			},
+			{
+			"platform": "facebook",
+			"url": "https://facebook.com/vintagefootball" 
 			}
 		]
 		}

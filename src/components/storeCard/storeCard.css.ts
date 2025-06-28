@@ -5,6 +5,7 @@ export const storeCardWrapper = style({
   margin: '0 auto',
   width: '395px',
   height: '468px',
+  marginBottom: '24px',
 });
 
 export const storeCard = style({
