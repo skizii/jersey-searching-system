@@ -267,7 +267,7 @@ export const hoverCard = style({
 });
 
 export const imageContainer = style({
-  width: '65%',
+  width: '248px',
   height: '248px',
   position: 'relative',
   display: 'flex',

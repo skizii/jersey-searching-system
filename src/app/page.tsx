@@ -17,11 +17,15 @@ export default function Home() {
   });
   const [sortBy, setSortBy] = useState('newest');
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
   
   const allStores = getStores();
 
   useEffect(() => {
     setIsMounted(true);
+    // Simulate loading for 1.5s
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   // Get unique countries from stores
@@ -150,7 +154,7 @@ export default function Home() {
         sortBy={sortBy}
         onSortChange={handleSortChange}
       />
-      <CardsTable stores={filteredAndSortedStores} />
+      <CardsTable stores={filteredAndSortedStores} loading={loading} />
     </Container>
   );
 }
