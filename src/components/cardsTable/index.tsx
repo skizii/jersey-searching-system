@@ -19,9 +19,18 @@ export const CardsTable: React.FC<CardsTableProps> = ({ stores = [], loading = f
 	}
 	return (
 		<div className={styles.cardsTable}>
-			{stores.map((store) => (
-				<StoreCard key={store.id} store={store} />
-			))}
+			{stores.length === 0 ? (
+				<div style={{ width: '100%', textAlign: 'center', padding: '32px 0', color: '#888', fontSize: 18 }}>
+					No stores found for your current filters😔
+					<br/>
+					<br />
+					Try adjusting your filters or search terms
+				</div>
+			) : (
+				stores.map((store) => (
+					<StoreCard key={store.id} store={store} />
+				))
+			)}
 		</div>
 	);
 };
