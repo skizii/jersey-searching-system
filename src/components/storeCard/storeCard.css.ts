@@ -142,7 +142,7 @@ export const storeLink = style({
       lineHeight: '13px',
     },
   },
-})
+});
 
 export const storeAdress = style({
   fontSize: '16px',

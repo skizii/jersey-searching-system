@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { FilterDropdown } from '../filterDropdown';
 import { filterButton } from "./filterButton.css";
 import Image from 'next/image';
-import { FilterDropdown } from '../filterDropdown';
 
 interface FilterButtonProps {
 	filters: {

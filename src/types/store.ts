@@ -6,7 +6,7 @@ export type Store = {
   website: string;
   defaultImage: string;
   assortment: string;
-  rating: string;
+  rating: number;
   statuses: {
     isAssortmentHighlighted: boolean;
     isEmailVerified: boolean;

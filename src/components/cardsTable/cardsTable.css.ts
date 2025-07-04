@@ -6,6 +6,7 @@ export const cardsTable = style({
 	display: 'grid',
 	gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
 	gridRowGap: '16px',
+	justifyItems: 'start',
 	
 	'@media': {
 		'screen and (max-width: 768px)': {

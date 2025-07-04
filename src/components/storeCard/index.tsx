@@ -41,9 +41,9 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
     }
   })());
 
-  // Check if store was created within the last 2 weeks
+  // Check if store was created within the last 2 weeks - only after mounting to prevent hydration mismatch
   const isNewStore = () => {
-    if (!store?.createDate) return false;
+    if (!isMounted || !store?.createDate) return false;
     const createDate = new Date(store.createDate);
     const today = new Date();
     const twoWeeksAgo = new Date(today.getTime() - (14 * 24 * 60 * 60 * 1000)); // 14 days ago

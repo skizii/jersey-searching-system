@@ -152,8 +152,8 @@ export const filterCheckbox = style({
     '&:checked': {
       borderColor: '#007bff',
       backgroundColor: '#007bff',
-      backgroundImage:
-        "url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 14 14\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M3 7l3 3 5-5\' stroke=\'white\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg>')",
+      // backgroundImage:
+      //   "url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 14 14\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M3 7l3 3 5-5\' stroke=\'white\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg>')",
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '12px 12px',
@@ -236,8 +236,8 @@ export const customCheckbox = style({
     '[data-checked="true"]&': {
       backgroundColor: '#007bff',
       borderColor: '#007bff',
-      backgroundImage:
-        "url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 14 14\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M3 7l3 3 5-5\' stroke=\'white\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg>')",
+      // backgroundImage:
+      //   "url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 14 14\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M3 7l3 3 5-5\' stroke=\'white\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg>')",
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '12px 12px',
