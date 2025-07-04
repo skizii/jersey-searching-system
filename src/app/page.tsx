@@ -51,10 +51,14 @@ export default function Home() {
     return createDate >= twoWeeksAgo;
   };
 
-  // Check if store is favourited
+  // Check if store is favourited - only after mounting to prevent hydration mismatch
   const isFavourited = (store: Store) => {
     if (!isMounted) return false;
-    return localStorage.getItem(`favourite-${store.id}`) === 'true';
+    try {
+      return localStorage.getItem(`favourite-${store.id}`) === 'true';
+    } catch {
+      return false;
+    }
   };
 
   // Sort stores based on sortBy value
@@ -117,8 +121,8 @@ export default function Home() {
       });
     }
 
-    // Apply favourited filter
-    if (filters.favourited) {
+    // Apply favourited filter - only after mounting
+    if (filters.favourited && isMounted) {
       filtered = filtered.filter(isFavourited);
     }
 

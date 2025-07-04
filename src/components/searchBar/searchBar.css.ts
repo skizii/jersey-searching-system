@@ -4,7 +4,6 @@ import { themeVars } from '@/styles/theme.css';
 export const inputWrapper = style({
   display: 'flex',
   alignItems: 'center',
-  marginRight: '32px',
   border: `1px solid ${themeVars.colors.accent}`,
   borderRadius: '9999px',
   padding: '11px 16px',

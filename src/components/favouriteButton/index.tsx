@@ -7,25 +7,33 @@ import Image from 'next/image';
 interface FavouriteButtonProps {
   storeId: string;
   isVisible: boolean;
-  initialFavourite?: boolean;
   onChange?: (isFav: boolean) => void;
 }
 
-export const FavouriteButton: React.FC<FavouriteButtonProps> = ({ storeId, isVisible, initialFavourite = false, onChange }) => {
-  const [isFavourite, setIsFavourite] = useState(initialFavourite);
+export const FavouriteButton: React.FC<FavouriteButtonProps> = ({ storeId, isVisible, onChange }) => {
+  const [isFavourite, setIsFavourite] = useState(false); // Always start with false to prevent hydration mismatch
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    const fav = localStorage.getItem(`favourite-${storeId}`);
-    setIsFavourite(fav === 'true');
+    // Only check localStorage after mounting
+    try {
+      const fav = localStorage.getItem(`favourite-${storeId}`);
+      setIsFavourite(fav === 'true');
+    } catch {
+      setIsFavourite(false);
+    }
   }, [storeId]);
 
   const toggleFavourite = (e: React.MouseEvent) => {
     e.stopPropagation();
     const newFav = !isFavourite;
     setIsFavourite(newFav);
-    localStorage.setItem(`favourite-${storeId}`, newFav.toString());
+    try {
+      localStorage.setItem(`favourite-${storeId}`, newFav.toString());
+    } catch {
+      // Handle localStorage errors silently
+    }
     if (onChange) onChange(newFav);
   };
 

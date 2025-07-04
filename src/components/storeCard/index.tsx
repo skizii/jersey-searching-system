@@ -33,7 +33,13 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
     setIsMounted(true);
   }, []);
 
-  const showFavouriteButton = isHovered || (isMounted && localStorage.getItem(`favourite-${store?.id}`) === 'true');
+  const showFavouriteButton = isHovered || (isMounted && (() => {
+    try {
+      return localStorage.getItem(`favourite-${store?.id}`) === 'true';
+    } catch {
+      return false;
+    }
+  })());
 
   // Check if store was created within the last 2 weeks
   const isNewStore = () => {
