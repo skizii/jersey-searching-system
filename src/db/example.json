@@ -39,7 +39,7 @@
 				"isVerified": true
 			},
 			"website":{
-				"value": "cutkits.com",
+				"value": "https://cutkits.com",
 				"isVerified": false
 			},
 			"tel": {
@@ -97,7 +97,7 @@
 				"isVerified": true
 			},
 			"website":{
-				"value": "retrofootball.com",
+				"value": "https://retrofootball.com",
 				"isVerified": true
 			},
 			"tel": {
@@ -151,7 +151,7 @@
 				"isVerified": false
 			},
 			"website":{
-				"value": "thirdkit.com",
+				"value": "https://thirdkit.com",
 				"isVerified": true
 			},
 			"tel": {
@@ -201,7 +201,7 @@
 				"isVerified": true
 			},
 			"website":{
-				"value": "tspncalcio.it",
+				"value": "https://tspncalcio.it",
 				"isVerified": true
 			},
 			"tel": {
@@ -259,7 +259,7 @@
 				"isVerified": true
 			},
 			"website":{
-				"value": "vintagefootball.com",
+				"value": "https://vintagefootball.com",
 				"isVerified": true
 			},
 			"tel": {

@@ -132,9 +132,21 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
               <Skeleton height={120} />
             )}
           </div>
-          <a className={styles.storeLink} href={store?.website ?? '#'}>
-            {store?.website ?? <Skeleton width={80} />}
-          </a>
+          {store?.website ? (
+            <a
+              className={styles.storeLink}
+              href={store.website}
+              tabIndex={-1}
+              style={{ pointerEvents: 'none', opacity: 0.5 }}
+              aria-disabled="true"
+            >
+              {store.website}
+            </a>
+          ) : (
+            <span className={styles.storeLink} style={{ opacity: 0.5 }}>
+              <Skeleton width={80} />
+            </span>
+          )}
           <div className={styles.storeInfoWrapper}>
             <h2 className={styles.storeName}>{store?.name ?? <Skeleton width={100} />}</h2>
             <p>
@@ -142,7 +154,7 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
               {addresses[0]?.country ?? <Skeleton width={40} />}
             </p>
           </div>
-          <SocialLinks socialMedia={store?.additionalInfo.socialMedia ?? []} />
+          <SocialLinks socialMedia={store?.additionalInfo.socialMedia ?? []} clickable={false} />
         </div>
       )}
     </div>

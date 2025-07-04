@@ -9,6 +9,7 @@ type SocialLink = {
 
 type Props = {
   socialMedia: SocialLink[];
+  clickable?: boolean;
 };
 
 const platformIcons: Record<string, string> = {
@@ -22,20 +23,37 @@ const platformIcons: Record<string, string> = {
   youtube: '/icons/social/yt.svg',
 };
 
-export const SocialLinks: React.FC<Props> = ({ socialMedia }) => (
+export const SocialLinks: React.FC<Props> = ({ socialMedia, clickable = true }) => (
     <div className={styles.wrapper}>
     {socialMedia.map(({ platform, url }) => {
       const iconSrc = platformIcons[platform];
 
       if (!iconSrc) return null; // защита на случай отсутствия иконки
 
-      return (
+      return clickable ? (
         <a
           key={platform}
           href={url}
           className={styles.link}
           target="_blank"
           rel="noopener noreferrer"
+        >
+          <Image
+            src={iconSrc}
+            alt={platform}
+            width={24}
+            height={24}
+            className={styles.icon}
+          />
+        </a>
+      ) : (
+        <a
+          key={platform}
+          href={url}
+          className={styles.link}
+          tabIndex={-1}
+          style={{ pointerEvents: 'none', opacity: 0.5 }}
+          aria-disabled="true"
         >
           <Image
             src={iconSrc}
