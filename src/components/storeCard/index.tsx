@@ -20,6 +20,7 @@ type Props = {
 export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [showSkeleton, setShowSkeleton] = useState(loading);
   const phone = store?.additionalInfo.contacts.tel.value;
   const email = store?.additionalInfo.contacts.email.value;
   const website = store?.website;
@@ -32,6 +33,19 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  // Ensure skeleton is visible for at least 500ms
+  useEffect(() => {
+    let timeout: NodeJS.Timeout | null = null;
+    if (loading) {
+      setShowSkeleton(true);
+    } else {
+      timeout = setTimeout(() => setShowSkeleton(false), 500);
+    }
+    return () => {
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [loading]);
 
   const showFavouriteButton = isHovered || (isMounted && (() => {
     try {
@@ -51,7 +65,7 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
   };
 
   // Skeleton placeholder
-  if (loading) {
+  if (showSkeleton) {
     return (
       <div className={styles.storeCardWrapper} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', minHeight: 320 }}>
         <Skeleton height={248} width={248} style={{ borderRadius: 16, marginBottom: 12 }} />
