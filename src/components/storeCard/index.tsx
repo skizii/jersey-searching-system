@@ -81,7 +81,7 @@ export const StoreCard: React.FC<Props> = ({ store, loading = false }) => {
           {isNewStore() && <div className={styles.storeBadge}></div>}
           <FavouriteButton storeId={store?.id ?? ''} isVisible={showFavouriteButton} />
         </div>
-        <StoreRating rating={+(store?.rating ?? 0)} />
+        <StoreRating rating={+(store?.rating ?? 0)} storeUrl={store?.website ?? ''} />
       </div>
 
       <div className={styles.storeInfo}>

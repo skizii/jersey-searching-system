@@ -9,6 +9,8 @@ export const storeRating = style({
     fontSize: '12px',
     textAlign: 'center',
     gap: '13px',
+    color: '#000',
+    textDecoration: 'none',
     
     '@media': {
         'screen and (max-width: 768px)': {
