@@ -137,18 +137,24 @@ export default function Home() {
   }, [allStores, searchQuery, filters, sortBy, isMounted]);
 
   const handleSearch = (query: string) => {
+    setLoading(true);
     setSearchQuery(query);
+    setTimeout(() => setLoading(false), 500);
   };
 
   const handleFilterChange = (filterType: string, value: boolean | string) => {
+    setLoading(true);
     setFilters(prev => ({
       ...prev,
       [filterType]: value,
     }));
+    setTimeout(() => setLoading(false), 500);
   };
 
   const handleSortChange = (newSortBy: string) => {
+    setLoading(true);
     setSortBy(newSortBy);
+    setTimeout(() => setLoading(false), 500);
   };
 
   return (
