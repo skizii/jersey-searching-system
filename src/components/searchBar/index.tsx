@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as styles from './searchBar.css';
 
 interface SearchBarProps {
@@ -7,9 +7,26 @@ interface SearchBarProps {
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const inputValueRef = useRef('');
+  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearch(e.target.value);
+    inputValueRef.current = e.target.value;
+    if (debounceTimeout.current) {
+      clearTimeout(debounceTimeout.current);
+    }
+    debounceTimeout.current = setTimeout(() => {
+      onSearch(inputValueRef.current);
+    }, 300);
   };
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimeout.current) {
+        clearTimeout(debounceTimeout.current);
+      }
+    };
+  }, []);
 
   return (
     <label className={styles.inputWrapper}>
