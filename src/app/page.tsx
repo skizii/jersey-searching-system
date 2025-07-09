@@ -43,52 +43,52 @@ export default function Home() {
     return Array.from(countrySet).sort();
   }, [allStores]);
 
-  // Check if store is new (created within last 2 weeks) - only after mounting to prevent hydration mismatch
-  const isNewStore = (store: Store) => {
-    if (!isMounted) return false;
-    const createDate = new Date(store.createDate);
-    const today = new Date();
-    const twoWeeksAgo = new Date(today.getTime() - (14 * 24 * 60 * 60 * 1000));
-    return createDate >= twoWeeksAgo;
-  };
-
-  // Check if store is favourited - only after mounting to prevent hydration mismatch
-  const isFavourited = (store: Store) => {
-    if (!isMounted) return false;
-    try {
-      return localStorage.getItem(`favourite-${store.id}`) === 'true';
-    } catch {
-      return false;
-    }
-  };
-
-  // Sort stores based on sortBy value
-  const sortStores = (stores: Store[]) => {
-    const sortedStores = [...stores];
-    
-    // Don't sort by date until mounted to prevent hydration mismatch
-    if (!isMounted) {
-      return sortedStores;
-    }
-    
-    switch (sortBy) {
-      case 'newest':
-        return sortedStores.sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
-      case 'oldest':
-        return sortedStores.sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());
-      case 'atoz':
-        return sortedStores.sort((a, b) => a.name.localeCompare(b.name));
-      case 'ztoa':
-        return sortedStores.sort((a, b) => b.name.localeCompare(a.name));
-      case 'rating':
-        return sortedStores.sort((a, b) => b.rating - a.rating);
-      default:
-        return sortedStores;
-    }
-  };
-
   // Filter and sort stores based on search query, filters, and sort
   const filteredAndSortedStores = useMemo(() => {
+    // Check if store is new (created within last 2 weeks) - only after mounting to prevent hydration mismatch
+    const isNewStore = (store: Store) => {
+      if (!isMounted) return false;
+      const createDate = new Date(store.createDate);
+      const today = new Date();
+      const twoWeeksAgo = new Date(today.getTime() - (14 * 24 * 60 * 60 * 1000));
+      return createDate >= twoWeeksAgo;
+    };
+
+    // Check if store is favourited - only after mounting to prevent hydration mismatch
+    const isFavourited = (store: Store) => {
+      if (!isMounted) return false;
+      try {
+        return localStorage.getItem(`favourite-${store.id}`) === 'true';
+      } catch {
+        return false;
+      }
+    };
+
+    // Sort stores based on sortBy value
+    const sortStores = (stores: Store[]) => {
+      const sortedStores = [...stores];
+      
+      // Don't sort by date until mounted to prevent hydration mismatch
+      if (!isMounted) {
+        return sortedStores;
+      }
+      
+      switch (sortBy) {
+        case 'newest':
+          return sortedStores.sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
+        case 'oldest':
+          return sortedStores.sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());
+        case 'atoz':
+          return sortedStores.sort((a, b) => a.name.localeCompare(b.name));
+        case 'ztoa':
+          return sortedStores.sort((a, b) => b.name.localeCompare(a.name));
+        case 'rating':
+          return sortedStores.sort((a, b) => b.rating - a.rating);
+        default:
+          return sortedStores;
+      }
+    };
+
     let filtered = allStores;
 
     // Apply search filter
