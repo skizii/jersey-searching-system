@@ -6,7 +6,6 @@ import * as styles from './filterDropdown.css';
 interface FilterDropdownProps {
   isOpen: boolean;
   filters: {
-    new: boolean;
     country: string;
     favourited: boolean;
   };
@@ -26,24 +25,6 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
     <div className={styles.filterDropdown}>
       <div className={styles.filterSection}>
         <h3 className={styles.filterTitle}>Filters</h3>
-        
-        {/* New stores filter */}
-        <div className={styles.filterOption}>
-          <label className={styles.filterLabel}>
-            <input
-              type="checkbox"
-              checked={filters.new}
-              onChange={(e) => onFilterChange('new', e.target.checked)}
-              className={styles.visuallyHiddenCheckbox}
-            />
-            <span
-              className={styles.customCheckbox}
-              data-checked={filters.new ? 'true' : 'false'}
-              aria-hidden="true"
-            />
-            <span className={styles.filterText}>New stores only</span>
-          </label>
-        </div>
 
         {/* Country filter */}
         <div className={styles.filterOption}>
