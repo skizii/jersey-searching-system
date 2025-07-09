@@ -32,11 +32,13 @@ export const logo = style({
   '@media': {
     'screen and (max-width: 768px)': {
       marginRight: '0',
+      marginLeft: '1px',
       alignSelf: 'flex-start',
     },
     'screen and (max-width: 480px)': {
       height: '20px',
       width: '50px',
+      margin: '10px 0'
     },
   },
 });
@@ -49,8 +51,8 @@ export const headerContent = style({
   
   '@media': {
     'screen and (max-width: 768px)': {
-      flexDirection: 'column',
-      alignItems: 'stretch',
+      width: '80%',
+      alignItems: 'center',
       gap: '16px',
     },
     'screen and (max-width: 480px)': {

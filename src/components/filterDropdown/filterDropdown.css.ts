@@ -33,12 +33,10 @@ export const filterDropdown = style({
   
   '@media': {
     'screen and (max-width: 768px)': {
-      right: '-50px',
       minWidth: '260px',
       padding: '16px',
     },
     'screen and (max-width: 480px)': {
-      right: '-100px',
       minWidth: '240px',
       padding: '12px',
       borderRadius: '6px',

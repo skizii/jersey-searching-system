@@ -104,7 +104,7 @@ export const icon = style({
 export const dropdownMenu = style({
   position: 'absolute',
   top: 'calc(100% + 8px)',
-  left: 0,
+  left: '-12px',
   zIndex: 1000,
   background: '#fff',
   border: '1px solid #e0e0e0',

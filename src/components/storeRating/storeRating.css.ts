@@ -14,6 +14,9 @@ export const storeRating = style({
     
     '@media': {
         'screen and (max-width: 768px)': {
+            width: '70%',
+            justifyContent: 'end',
+            flexWrap: 'wrap',
             gap: '10px',
         },
         'screen and (max-width: 480px)': {

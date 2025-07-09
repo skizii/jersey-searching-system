@@ -205,10 +205,11 @@ export const storeContacts = style({
   fontSize: '13px',
   fontWeight: '400',
   lineHeight: '15px',
-  textAlign: 'center',
+  textAlign: 'start',
 });
 
 export const storeContact = style({
+  display: 'contents',
   textDecoration: 'none',
   color: themeVars.colors.secondaryWithBg,
   cursor: 'pointer',
